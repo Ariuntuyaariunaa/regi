@@ -174,8 +174,24 @@ body {
   margin-left: 10px;
 }
 
+.search__btn {
+  font-size: 35px;
+  background: none;
+  border: none;
+  color: #9b9b45;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.1;
+  margin-left: 10px;
+}
+
 .add__btn:active {
   transform: translateY(2px);
+}
+
+.search__btn:active {
+  transform: translateY(3px);
 }
 
 .add__type:focus,
@@ -218,6 +234,10 @@ h2 {
 }
 .expenses__title {
   color: #ff5049;
+}
+
+.regi__title {
+  color: #ff50;
 }
 
 .item {

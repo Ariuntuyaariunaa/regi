@@ -4,6 +4,7 @@ var uiController = (function() {
       inputType: ".add__type",
       inputDescription: ".add__description",
       inputValue: ".add__value",
+      
       addBtn: ".add__btn",
       incomeList: ".income__list",
       expenseList: ".expenses__list",
@@ -13,7 +14,12 @@ var uiController = (function() {
       percentageLabel: ".budget__expenses--percentage",
       containerDiv: ".container",
       expensePercentageLabel: ".item__percentage",
-      dateLabel: ".budget__title--month"
+      dateLabel: ".budget__title--month",
+
+    
+      sValue: ".s__value",
+      searchbtn:"search_btn",
+      regiSearch:".regi_search"
     };
   
     var nodeListForeach = function(list, callback) {
@@ -147,8 +153,19 @@ var uiController = (function() {
         var el = document.getElementById(id);
         el.parentNode.removeChild(el);
       },
-  
+      searchListItem: function(id){
+        let re = /[A-Z]/;
+        let str = 'hi There! How are you?';
+        let index = str.search(re);
+        console.log(index,'eeedd');
+
+      },
+      
       addListItem: function(item, type) {
+
+        
+
+        
         // Орлого зарлагын элементийг агуулсан html-ийг бэлтгэнэ.
         var html, list;
         if (type === "inc") {
@@ -160,6 +177,8 @@ var uiController = (function() {
           html =
             '<div class="item clearfix" id="exp-%id%"><div class="item__description">$$DESCRIPTION$$</div>          <div class="right clearfix"><div class="item__value">$$VALUE$$</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn">                <i class="ion-ios-close-outline"></i></button></div></div></div>';
         }
+        
+        
         // Тэр HTML дотроо орлого зарлагын утгуудыг REPLACE ашиглаж өөрчилж
         html = html.replace("%id%", item.id);
         html = html.replace("$$DESCRIPTION$$", item.description);
@@ -169,7 +188,12 @@ var uiController = (function() {
         document.querySelector(list).insertAdjacentHTML("beforeend", html);
       }
     };
+
+
+    
   })();
+  
+
   
   // Санхүүтэй ажиллах контроллер
   var financeController = (function() {
@@ -356,6 +380,11 @@ var uiController = (function() {
           ctrlAddItem();
         }
       });
+
+      document.querySelector(DOM.search__btn).addEventListener("click", function() {
+        ctrlAddItem();
+      });
+
   
       document
         .querySelector(DOM.inputType)

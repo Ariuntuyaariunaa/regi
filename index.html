@@ -14,8 +14,16 @@
     />
     <link type="text/css" rel="stylesheet" href="style.css" />
     <title>Arii Өрхийн санхүү</title>
+
+    <title>reCAPTCHA demo: Simple page</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
+    <form action="?" method="POST">
+      <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
     <div class="top">
       <div class="budget">
         <div class="budget__title">
@@ -25,7 +33,7 @@
         <div class="budget__value">+ 2,345.64</div>
 
         <div class="budget__income clearfix">
-          <div class="budget__income--text">Орлого</div>
+          <div class="budget__income--text">Орлогоdd</div>
           <div class="right">
             <div class="budget__income--value">+ 4,300.00</div>
             <div class="budget__income--percentage">&nbsp;</div>
@@ -68,6 +76,26 @@
           <h2 class="expenses__title">Зарлага</h2>
 
           <div class="expenses__list"></div>
+        </div>
+      </div>
+      <div class="add">
+        <div class="add__container">
+          <input
+            type="text"
+            class="add__description"
+            placeholder="Регистрын дугаар"
+          />
+          <input type="number" class="add__value" placeholder="Дүн" />
+          <button class="search__btn">
+            <i class="ion-ios-checkmark-outline"></i>
+          </button>
+        </div>
+      </div>
+      <div class="container clearfix">
+        <div class="regi">
+          <h2 class="regi_title">Та 1сая төгрөгний эрхийн бичиг авах</h2>
+
+          <div class="regi_search"></div>
         </div>
       </div>
     </div>
